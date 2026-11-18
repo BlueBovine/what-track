@@ -1,0 +1,21 @@
+# Copy to data/config.yaml
+session_db: /data/session.db     # WhatsApp login/keys (keep private!)
+log_db: /data/presence.db        # presence history
+
+# Optional push notifications via ntfy (https://ntfy.sh). Leave topic empty to disable.
+ntfy:
+  server: https://ntfy.sh
+  topic: ""
+  token: ""                      # optional bearer token
+
+resubscribe_interval: 5m
+# Alert (via ntfy) if the WhatsApp connection stays down this long
+disconnect_alert_after: 15m
+
+contacts:
+  - name: Alice
+    number: "15551234567"        # international format, digits only
+    notify: true                 # push a notification on changes
+  - name: Bob
+    number: "447700900123"
+    notify: false                # log only

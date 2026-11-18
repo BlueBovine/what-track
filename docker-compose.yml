@@ -1,0 +1,10 @@
+services:
+  what-track:
+    build: .
+    restart: unless-stopped
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./data:/data
+    # first run (QR pairing) needs a TTY:  docker compose run --rm what-track
+    stdin_open: true
+    tty: true
